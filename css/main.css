@@ -1,0 +1,32 @@
+/*
+*
+* Con fines practicos de modificacion al css
+* en este archivo se sobreescribiran clases 
+* necesarias para personalizar el template
+*/
+
+/*Navbar, modificar el color a purpura ingenieria en computacion UAA*/ 
+.skin-default .navbar {
+    background: none;
+    background-color: #dd137b !important;
+}
+
+/* Navbar pequeña izquierda, modificar color a purpura ingenieria */
+
+body > .header .logo {
+	    display: -webkit-inline-box;
+    background-color: #dd137b;
+}
+
+/*Modificar clase del logitpo de ingenieria*/
+.uaa-logo {
+    margin-top: -5px;
+    height: 52px;
+}
+/*Estilo del titulo superior izquierdo */
+.navbar-titulo {
+    font-family: fantasy;
+    color: #f5f5f5;
+    font-size: 31px;
+
+}
