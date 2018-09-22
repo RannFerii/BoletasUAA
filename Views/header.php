@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Clear Admin Template | Clear Admin Template </title>
+    <title>UAA | Boletas </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="img/favicon.ico"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -15,15 +15,21 @@
     <link type="text/css" rel="stylesheet" href="css/app.css"/>
     <!-- end of global css -->
     <!--page level css -->
-    <link rel="stylesheet" href="vendors/swiper/css/swiper.min.css">
-    <link href="vendors/nvd3/css/nv.d3.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="vendors/lcswitch/css/lc_switch.css">
+    <link rel="stylesheet" type="text/css" href="vendors/datatables/css/dataTables.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="vendors/datatables/css/buttons.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="vendors/datatables/css/colReorder.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="vendors/datatables/css/dataTables.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="vendors/datatables/css/rowReorder.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="vendors/datatables/css/buttons.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="vendors/datatables/css/scroller.bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <link rel="stylesheet" href="css/custom_css/skins/skin-default.css" type="text/css" id="skin"/>
-    <link href="css/custom_css/dashboard1.css" rel="stylesheet" type="text/css"/>
-    <link href="css/custom_css/dashboard1_timeline.css" rel="stylesheet"/>
+     <!--end of page level css-->
+     
+    <!--Sobreescribir clases, siempre al final de todos los css -->
+    <link href="css/main.css" rel="stylesheet"/>
 
-    <!--end of page level css-->
+   
 </head>
 <body class="skin-default">
 <div class="preloader">
@@ -33,8 +39,9 @@
 <header class="header">
     <nav class="navbar navbar-static-top" role="navigation">
         <a href="index.html" class="logo">
-            <!-- Add the class icon to your logo image or logo icon to add the marginin -->
-            <img src="img/logo.png" alt="logo"/>
+            <!-- Logotipo UAA -->
+            <img src="img/computo.png" class="uaa-logo" alt="logo"/>
+            <h5 class="navbar-titulo">Boletas</h5>
         </a>
         <!-- Header Navbar: style can be found in header-->
         <!-- Sidebar toggle button-->
@@ -214,47 +221,24 @@
                     <li class="menu-dropdown">
                         <a href="javascript:void(0)">
                             <i class="menu-icon ti-check-box"></i>
-                            <span>Forms</span>
+                            <span>Administrar</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li>
                                 <a href="javascript:void(0)">
-                                    <i class="fa fa-fw ti-receipt"></i> Features
+                                    <i class="fa fa-fw ti-receipt"></i> Profesores
                                     <span class="fa arrow"></span>
                                 </a>
                                 <ul class="sub-menu p-l-40">
-                                    <li><a href="form_elements.html"> <i class="fa fa-fw ti-cup"></i> Form Elements </a>
-                                    </li>
-                                    <li><a href="realtime_form.html"> <i class="fa fa-fw ti-write"></i> Realtime Forms
-                                    </a></li>
-                                    <li>
-                                        <a href="form_validations.html">
-                                            <i class="fa fa-fw ti-alert"></i> Form Validations
+                                   <li>
+                                        <a href="?c=maestro&a=Index"> <i class="fa fa-fw ti-write"></i> Ver
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="form_layouts.html">
-                                            <i class="fa fa-fw ti-layout-width-default"></i> Form Layouts
+                                        <a href="?c=maestro&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="complex_forms.html">
-                                            <i class="fa fa-fw ti-layout-cta-left"></i> Complex Forms
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="complex_forms2.html">
-                                            <i class="fa fa-fw ti-layout-cta-center"></i> Complex Forms 2
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="radio_checkboxes.html">
-                                            <i class="fa fa-fw ti-check-box"></i> Radio and Checkbox
-                                        </a>
-                                    </li>
-
                                 </ul>
                             </li>
                             <li>
