@@ -90,11 +90,11 @@ class maestro
 		{
 			//Sentencia SQL para actualizar los datos.
 			$sql = "UPDATE proveedor SET
-						nombre          = ?,
-						apellidoPaterno        = ?,
-						apellidoMaterno        = ?,
-						email        = ?,
-            			telefono        = ?,
+						nombre             = ?,
+						apellidoPaterno    = ?,
+						apellidoMaterno    = ?,
+						email              = ?,
+            			telefono           = ?,
 				    WHERE maestroId = ?";
 			//Ejecución de la sentencia a partir de un arreglo.
 			$this->pdo->prepare($sql)

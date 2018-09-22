@@ -53,8 +53,8 @@
                                      <td><?php echo $r->telefono; ?></td>
                                      <td> 
                                       <div class="ui-group-buttons">
-                                        <a href="#" class="btn btn-success" role="button">
-                                            <span class="glyphicon glyphicon-ok"></span> 
+                                        <a href="#" class="btn btn-warning" role="button">
+                                            <span class="ti-pencil"></span> 
                                         </a>
                                         <div class="or"></div>
                                         <a href="#" class="btn btn-default" role="button">
