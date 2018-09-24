@@ -4,9 +4,11 @@ require_once 'model/maestro.php';
 class MaestroController{
 
     private $model;
+    private $errorMessage;
 
     public function __CONSTRUCT(){
         $this->model = new maestro();
+         $this->errorMessage ="";
     }
 
     //Llamado plantilla principal
@@ -52,12 +54,22 @@ class MaestroController{
         $maestro->telefono = $_REQUEST['telefono'];
 
         $this->model->Registrar($maestro);
+        // try
+        // {
+        //     $this->model->Registrar($maestro);
+        // }
+        // catch(Exception $e)
+        // {
+        //      return   $e->getMessage();
+        // }
+
+        
 
         header('Location: index.php?c=maestro');
     }
 
     public function Editar(){
-        $maestro = new producto();
+        $maestro = new maestro();
 
         $maestro->maestroId = $_REQUEST['maestroId'];
         $maestro->nombre = $_REQUEST['nombre'];

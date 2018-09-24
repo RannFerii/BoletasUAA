@@ -162,7 +162,7 @@
                 <ul class="navigation">
                     <li class="menu-dropdown">
                         <a href="javascript:void(0)">
-                            <i class="menu-icon ti-check-box"></i>
+                            <i class="fa fa-fw fa-book"></i>
                             <span>Administrar</span>
                             <span class="fa arrow"></span>
                         </a>
@@ -174,16 +174,18 @@
                                 </a>
                                 <ul class="sub-menu p-l-40">
                                    <li>
-                                        <a href="?c=maestro&a=Index"> <i class="fa fa-fw ti-write"></i> Ver todos
+                                        <a href="?c=maestro&a=Index"> 
+                                            <i class="fa fa-fw fa-eye"></i> Ver todos
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="?c=maestro&a=Reporte"> <i class="fa fa-fw ti-write"></i> 
-                                            Reporte
+                                        <a href="?c=maestro&a=Reporte"> 
+                                            <i class="fa fa-fw fa-download"></i>  Reporte
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="?c=maestro&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
+                                        <a href="?c=maestro&a=Agregar">
+                                           <i class="fa fa-fw fa-plus"></i> Agregar
                                         </a>
                                     </li>
                                 </ul>
