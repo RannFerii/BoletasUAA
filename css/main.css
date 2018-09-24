@@ -28,5 +28,28 @@ body > .header .logo {
     font-family: fantasy;
     color: #f5f5f5;
     font-size: 31px;
+}
 
+/* modificar Hover de los <a> */
+#menu li.active > a {
+    color: #dd137b;
+}
+
+#menu li > a:hover {
+    color: #dd137b;
+}
+
+#menu li.active > a {
+    color: #dd137b;
+}
+
+#menu li.active > a {
+    border-right: 3px solid  #dd137b;
+}
+
+/* Modificar color de la paginacion Datatable*/
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    background-color: #dd137b;
+    border-color: #dd137b;
 }

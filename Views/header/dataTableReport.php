@@ -68,80 +68,6 @@
         </div>
         <div class="navbar-right">
             <ul class="nav navbar-nav">
-                <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-fw ti-email black"></i>
-                        <span class="label label-success">2</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages table-striped">
-                        <li class="dropdown-title">New Messages</li>
-                        <li>
-                            <a href="" class="message striped-col">
-                                <img class="message-image img-circle" src="img/authors/avatar7.jpg" alt="avatar-image">
-
-                                <div class="message-body"><strong>Ernest Kerry</strong>
-                                    <br>
-                                    Can we Meet?
-                                    <br>
-                                    <small>Just Now</small>
-                                    <span class="label label-success label-mini msg-lable">New</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="message">
-                                <img class="message-image img-circle" src="img/authors/avatar6.jpg" alt="avatar-image">
-
-                                <div class="message-body"><strong>John</strong>
-                                    <br>
-                                    Dont forgot to call...
-                                    <br>
-                                    <small>5 minutes ago</small>
-                                    <span class="label label-success label-mini msg-lable">New</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="message striped-col">
-                                <img class="message-image img-circle" src="img/authors/avatar5.jpg" alt="avatar-image">
-
-                                <div class="message-body">
-                                    <strong>Wilton Zeph</strong>
-                                    <br>
-                                    If there is anything else &hellip;
-                                    <br>
-                                    <small>14/10/2014 1:31 pm</small>
-                                </div>
-
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="message">
-                                <img class="message-image img-circle" src="img/authors/avatar1.jpg" alt="avatar-image">
-                                <div class="message-body">
-                                    <strong>Jenny Kerry</strong>
-                                    <br>
-                                    Let me know when you free
-                                    <br>
-                                    <small>5 days ago</small>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="message striped-col">
-                                <img class="message-image img-circle" src="img/authors/avatar.jpg" alt="avatar-image">
-                                <div class="message-body">
-                                    <strong>Tony</strong>
-                                    <br>
-                                    Let me know when you free
-                                    <br>
-                                    <small>5 days ago</small>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="dropdown-footer"><a href="#"> View All messages</a></li>
-                    </ul>
-
-                </li>
                 <!--rightside toggle-->
                 <li>
                     <a href="#" class="dropdown-toggle toggle-right" data-toggle="dropdown">
@@ -236,7 +162,7 @@
                 <ul class="navigation">
                     <li class="menu-dropdown">
                         <a href="javascript:void(0)">
-                            <i class="menu-icon ti-check-box"></i>
+                            <i class="fa fa-fw fa-book"></i>
                             <span>Administrar</span>
                             <span class="fa arrow"></span>
                         </a>
@@ -244,6 +170,31 @@
                             <li>
                                 <a href="javascript:void(0)">
                                     <i class="fa fa-fw ti-receipt"></i> Profesores
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="sub-menu p-l-40">
+                                   <li>
+                                        <a href="?c=maestro&a=Index"> 
+                                            <i class="fa fa-fw fa-eye"></i> Ver todos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=maestro&a=Reporte"> 
+                                            <i class="fa fa-fw fa-download"></i>  Reporte
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=maestro&a=Agregar">
+                                           <i class="fa fa-fw fa-plus"></i> Agregar
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                         <ul class="sub-menu">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-fw ti-receipt"></i> Alumnos
                                     <span class="fa arrow"></span>
                                 </a>
                                 <ul class="sub-menu p-l-40">
@@ -261,90 +212,6 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <i class="fa fa-fw ti-clipboard"></i> Components
-                                    <span class="fa arrow"></span>
-                                </a>
-                                <ul class="sub-menu p-l-40">
-                                    <li>
-                                        <a href="form_editors.html">
-                                            <i class="fa fa-fw ti-pencil"></i> Form Editors
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_wizards.html">
-                                            <i class="fa fa-fw ti-settings"></i> Form Wizards
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="dropdowns.html">
-                                            <i class="fa fa-fw ti-widget-alt"></i> Drop Downs
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="datepicker.html">
-                                            <i class="fa fa-fw ti-calendar"></i> Date pickers
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="advanceddate_pickers.html">
-                                            <i class="fa fa-fw ti-notepad"></i> Advanced Date pickers
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="x-editable.html">
-                                            <i class="fa fa-fw ti-slice"></i> X-editable
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-dropdown">
-                        <a href="#">
-                            <i class="menu-icon ti-desktop"></i>
-                            <span>
-                                    UI Features
-                                </span>
-                            <span class="fa arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="general_components.html">
-                                    <i class="fa fa-fw ti-plug"></i> General Components
-                                </a>
-                            </li>
-                            <li>
-                                <a href="buttons.html">
-                                    <i class="fa fa-fw ti-layout-placeholder"></i> Buttons
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tabs_accordions.html">
-                                    <i class="fa fa-fw ti-layers"></i> Tabs &amp; Accordions
-                                </a>
-                            </li>
-                            <li>
-                                <a href="fonts.html">
-                                    <i class="fa fa-fw ti-ink-pen"></i> Font Icons
-                                </a>
-                            </li>
-                            <li>
-                                <a href="advanced_modals.html">
-                                    <i class="fa fa-fw ti-brush-alt"></i> Advanced Modals
-                                </a>
-                            </li>
-                            <li>
-                                <a href="timeline.html">
-                                    <i class="fa fa-fw ti-time"></i> Timeline
-                                </a>
-                            </li>
-                            <li>
-                                <a href="notifications.html">
-                                    <i class="fa fa-fw ti-flag-alt"></i> Notifications
-                                </a>
                             </li>
                         </ul>
                     </li>

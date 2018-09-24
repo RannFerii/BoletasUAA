@@ -12,6 +12,7 @@ class maestro
     public $email;
     public $telefono;
 
+
 	//Método de conexión a SGBD.
 	public function __CONSTRUCT()
 	{
@@ -24,6 +25,7 @@ class maestro
 			die($e->getMessage());
 		}
 	}
+
 
 	//Este método selecciona todas las tuplas de la tabla
 	//proveedor en caso de error se muestra por pantalla.
@@ -73,9 +75,9 @@ class maestro
 			//Sentencia SQL para eliminar una tupla utilizando
 			//la clausula Where.
 			$stm = $this->pdo
-			            ->prepare("DELETE FROM proveedor WHERE maestroId = ?");
+			            ->prepare("DELETE FROM maestros WHERE maestroId = ?");
 
-			$stm->execute(array($nit));
+			$stm->execute(array($maestroId));
 		} catch (Exception $e)
 		{
 			die($e->getMessage());
@@ -89,12 +91,12 @@ class maestro
 		try
 		{
 			//Sentencia SQL para actualizar los datos.
-			$sql = "UPDATE proveedor SET
-						nombre          = ?,
-						apellidoPaterno        = ?,
-						apellidoMaterno        = ?,
-						email        = ?,
-            			telefono        = ?,
+			$sql = "UPDATE maestros SET
+						nombre             = ?,
+						apellidoPaterno    = ?,
+						apellidoMaterno    = ?,
+						email              = ?,
+            			telefono           = ?
 				    WHERE maestroId = ?";
 			//Ejecución de la sentencia a partir de un arreglo.
 			$this->pdo->prepare($sql)
@@ -104,7 +106,8 @@ class maestro
                         $data->apellidoPaterno,
                         $data->apellidoMaterno,
                         $data->email,
-                        $data->telefono
+                        $data->telefono,
+                        $data->maestroId
 					)
 				);
 		} catch (Exception $e)
@@ -134,7 +137,7 @@ class maestro
 			);
 		} catch (Exception $e)
 		{
-			die($e->getMessage());
+			return die($e->getMessage());
 		}
 	}
 }

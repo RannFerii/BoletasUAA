@@ -1,7 +1,7 @@
 
 <section class="content-header">
-    <h1>
-        Form Elements
+    <h1> Forms
+      
     </h1>
     <ol class="breadcrumb">
         <li>
@@ -53,11 +53,11 @@
                                      <td><?php echo $r->telefono; ?></td>
                                      <td> 
                                       <div class="ui-group-buttons">
-                                        <a href="#" class="btn btn-success" role="button">
-                                            <span class="glyphicon glyphicon-ok"></span> 
+                                        <a href="?c=maestro&a=Crud&maestroId=<?php echo $r->maestroId; ?>"" class="btn btn-warning" role="button">
+                                            <i class="fa fa-fw fa-edit"></i>
                                         </a>
                                         <div class="or"></div>
-                                        <a href="#" class="btn btn-default" role="button">
+                                        <a href="?c=maestro&a=Eliminar&maestroId=<?php echo $r->maestroId; ?>" class="btn btn-default" role="button">
                                             <span class="glyphicon glyphicon-remove"></span> 
                                         </a>
                                     </div>
