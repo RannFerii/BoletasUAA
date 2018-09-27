@@ -3,6 +3,13 @@
   //SGBD: MySQL.
   require_once 'model/database.php';
 
+  //Si el usuario no esta registrado , redirigir al login
+  session_start();
+  if(!isset($_SESSION["usuario"]))
+  {
+    header("Location:login.php");
+  }
+
   //Para registrar productos es necesario iniciar los proveedores
   //de los mismos, por ello la variable controller para este
   //ejercicio se inicia con el 'proveedor'.

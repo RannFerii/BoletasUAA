@@ -1,0 +1,6 @@
+/*
+* Archivo exclusivo para las modificaciones de login.php
+*/
+#sign-in, #sign-up {
+    background: radial-gradient(ellipse at center, #d6a0c3 0%, #e63cc0 100%);
+}

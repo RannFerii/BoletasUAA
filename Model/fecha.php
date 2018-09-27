@@ -1,14 +1,18 @@
 <?php
-class proveedor
+class fecha
 {
 	//Atributo para conexión a SGBD
 	private $pdo;
 
 		//Atributos del objeto proveedor
-    public $nit;
-    public $razonS;
-    public $dir;
-    public $tel;
+    public $fechaId;
+    public $primerDepartamental;
+    public $segundoDepartamental;
+    public $parcial;
+    public $finalA;
+    public $finalB;
+    public $cicloEscolarId;
+
 
 	//Método de conexión a SGBD.
 	public function __CONSTRUCT()
@@ -31,7 +35,28 @@ class proveedor
 		{
 			$result = array();
 			//Sentencia SQL para selección de datos.
-			$stm = $this->pdo->prepare("SELECT * FROM proveedor");
+			$stm = $this->pdo->prepare("SELECT * FROM fechas");
+			//Ejecución de la sentencia SQL.
+			$stm->execute();
+			//fetchAll — Devuelve un array que contiene todas las filas del conjunto
+			//de resultados
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			//Obtener mensaje de error.
+			die($e->getMessage());
+		}
+	}
+
+	//Ciclo Escolar
+	public function ListarCicloEscolar()
+	{
+		try
+		{
+			$result = array();
+			//Sentencia SQL para selección de datos.
+			$stm = $this->pdo->prepare("SELECT * FROM ciclos_escolares");
 			//Ejecución de la sentencia SQL.
 			$stm->execute();
 			//fetchAll — Devuelve un array que contiene todas las filas del conjunto
@@ -47,16 +72,32 @@ class proveedor
 
 	//Este método obtiene los datos del proveedor a partir del nit
 	//utilizando SQL.
-	public function Obtener($nit)
+	public function Obtener($fechaId)
 	{
 		try
 		{
 			//Sentencia SQL para selección de datos utilizando
 			//la clausula Where para especificar el nit del proveedor.
-			$stm = $this->pdo->prepare("SELECT * FROM proveedor WHERE nit = ?");
+			$stm = $this->pdo->prepare("SELECT * FROM fechas WHERE fechaId = ?");
 			//Ejecución de la sentencia SQL utilizando el parámetro nit.
-			$stm->execute(array($nit));
+			$stm->execute(array($fechaId));
 			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
+	public function CicloEscolarNombre($cicloEscolarId)
+	{
+		try
+		{
+			$stm = $this->pdo->prepare("SELECT * FROM ciclos_escolares WHERE cicloEscolarId = ?");
+			$stm->execute(array($cicloEscolarId));
+			$fecha = new fecha();
+			$fecha =  $stm->fetch(PDO::FETCH_OBJ);
+			 return $fecha->nombre;
+
 		} catch (Exception $e)
 		{
 			die($e->getMessage());
@@ -109,21 +150,23 @@ class proveedor
 	}
 
 	//Método que registra un nuevo proveedor a la tabla.
-	public function Registrar(proveedor $data)
+	public function Registrar(fecha $data)
 	{
 		try
 		{
 			//Sentencia SQL.
-			$sql = "INSERT INTO proveedor (nit,razonS,dir,tel)
-		        VALUES (?, ?, ?, ?)";
+			$sql = "INSERT INTO fechas (primerDepartamental,segundoDepartamental,parcial,finalA,finalB,cicloEscolarId)
+		        VALUES (?,?,?,?,?,?)";
 
 			$this->pdo->prepare($sql)
 		     ->execute(
 				array(
-                    $data->nit,
-                    $data->razonS,
-                    $data->dir,
-                    $data->tel,
+                    $data->primerDepartamental,
+                    $data->segundoDepartamental,
+                    $data->parcial,
+                    $data->finalA,
+                    $data->finalB,
+                    $data->cicloEscolarId
                 )
 			);
 		} catch (Exception $e)

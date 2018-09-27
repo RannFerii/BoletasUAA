@@ -1,17 +1,18 @@
 <?php
 require_once 'model/maestro.php';
+require_once 'BLL/maestrosBLL.php';
 
 class MaestroController{
 
     private $model;
-    private $errorMessage;
+    private $BLL;
 
     public function __CONSTRUCT(){
         $this->model = new maestro();
-         $this->errorMessage ="";
+        $this->BLL = new maestrosBLL();
     }
 
-    //Llamado plantilla principal
+    //Vista por default
     public function Index(){
         require_once 'Views/header/dataTableReport.php';
         require_once 'Views/maestro/index.php';
@@ -26,14 +27,13 @@ class MaestroController{
 
     public function Crud(){
         $maestro = new maestro();
-
-        if(isset($_REQUEST['maestroId'])){
+        if(isset($_REQUEST['maestroId'])) {
             $maestro = $this->model->Obtener($_REQUEST['maestroId']);
         }
 
-        require_once 'Views/header.php';
+       require_once 'Views/header/dataTableReport.php';
         require_once 'Views/maestro/Editar.php';
-        require_once 'Views/footer.php';
+        require_once 'Views/footer/dataTableReport.php';
     }
 
     public function Agregar(){
@@ -46,6 +46,7 @@ class MaestroController{
 
     public function Guardar(){
         $maestro = new maestro();
+       
 
         $maestro->nombre = $_REQUEST['nombre'];
         $maestro->apellidoPaterno = $_REQUEST['apellidoPaterno'];
@@ -53,7 +54,19 @@ class MaestroController{
         $maestro->email = $_REQUEST['email'];
         $maestro->telefono = $_REQUEST['telefono'];
 
-        $this->model->Registrar($maestro);
+        $actionResult= "";
+        if($this->BLL->checkEmail($maestro->email)==true)
+        {
+            $actionResult='Location: index.php?c=maestro&a=Agregar';
+            
+        }else
+        {
+            $this->model->Registrar($maestro);
+             $actionResult='Location: index.php?c=maestro';
+        }
+
+
+        
         // try
         // {
         //     $this->model->Registrar($maestro);
@@ -64,8 +77,8 @@ class MaestroController{
         // }
 
         
-
-        header('Location: index.php?c=maestro');
+        header($actionResult);
+       
     }
 
     public function Editar(){
