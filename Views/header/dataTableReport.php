@@ -36,13 +36,38 @@
     <!-- Formularios -->
     <link href="vendors/iCheck/css/all.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/passtrength/passtrength.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
     <link rel="stylesheet" type="text/css" href="vendors/sweetalert2/css/sweetalert2.min.css"/>
     <link href="vendors/bootstrapvalidator/css/bootstrapValidator.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/custom_css/skins/skin-default.css" type="text/css" id="skin"/>
     <link rel="stylesheet" href="css/custom_css/form2.css"/>
     <link rel="stylesheet" href="css/custom_css/form3.css"/>
+    
+    <!--DatePicker-->
+    <link href="vendors/daterangepicker/css/daterangepicker.css" rel="stylesheet" type="text/css"/>
+    <link href="vendors/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="vendors/datedropper/datedropper.css">
+    <link rel="stylesheet" type="text/css" href="vendors/timedropper/css/timedropper.css">
+    <link rel="stylesheet" type="text/css" href="vendors/jquerydaterangepicker/css/daterangepicker.min.css">
+    <!--clock face css-->
+    <link rel="stylesheet" type="text/css" href="vendors/clockpicker/css/bootstrap-clockpicker.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom_css/skins/skin-default.css" type="text/css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css">
+
+    <!-- DropDown Select2-->
+    <link href="vendors/bootstrap-multiselect/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css">
+    <link href="vendors/select2/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="vendors/select2/css/select2-bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="vendors/selectize/css/selectize.css" rel="stylesheet" type="text/css">
+    <link href="vendors/selectric/css/selectric.css" rel="stylesheet" type="text/css">
+    <link href="vendors/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css">
+    <link href="vendors/iCheck/css/all.css" rel="stylesheet" type="text/css">
+    <Link href="vendors/iCheck/css/line/line.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom_css/skins/skin-default.css" type="text/css" id="skin"/>
      
-    <!--Sobreescribir clases, siempre al final de todos los css -->
+    <!--Estilos modificados, siempre al final de todos para sobreescribirse-->
     <link href="css/main.css" rel="stylesheet"/>
 
    
@@ -82,7 +107,12 @@
                              height="35" alt="User Image">
                         <div class="riot">
                             <div>
-                                Addison
+                                <?php 
+                                  if(isset($_SESSION["usuario"]))
+                                  {
+                                    echo $_SESSION["usuario"];
+                                  }
+                                  ?>
                                 <span>
                                         <i class="caret"></i>
                                     </span>
@@ -110,10 +140,15 @@
                                 </a>
                             </div>
                             <div class="pull-right">
-                                <a href="login.html">
-                                    <i class="fa fa-fw ti-shift-right"></i>
-                                    Logout
-                                </a>
+
+                                 <?php 
+                                  if(isset($_SESSION["usuario"]))
+                                  {
+
+                                    echo "<a href='closeSession.php'><i class='fa fa-fw ti-shift-right'></i> Salir      </a>";
+                                  }
+                                  ?>
+                                
                             </div>
                         </li>
                     </ul>
@@ -209,6 +244,29 @@
                                     </li>
                                     <li>
                                         <a href="?c=maestro&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                         <ul class="sub-menu">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-fw ti-receipt"></i> Fechas
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="sub-menu p-l-40">
+                                   <li>
+                                        <a href="?c=fecha&a=Index"> <i class="fa fa-fw ti-write"></i> Ver todas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=fecha&a=Reporte"> <i class="fa fa-fw ti-write"></i> 
+                                            Reporte
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=fecha&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
                                         </a>
                                     </li>
                                 </ul>
