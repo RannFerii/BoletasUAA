@@ -10,7 +10,7 @@ class Database
 
     public static function Conectar()
     {
-        $pdo = new PDO('mysql:host=localhost;dbname=calificaciones;charset=utf8', 'root', '123456');
+        $pdo = new PDO('mysql:host=localhost;dbname=calificaciones;charset=utf8', 'root', 'Genesis10.');
         //Filtrando posibles errores de conexión.
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
