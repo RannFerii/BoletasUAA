@@ -1,19 +1,18 @@
-
 <section class="content-header">
     <h1>
-        Form Elements
+        Administrar
     </h1>
     <ol class="breadcrumb">
         <li>
-            <a href="index.html">
-                <i class="fa fa-fw ti-home"></i> Dashboard
+            <a href="Index.php">
+                <i class="fa fa-fw ti-home"></i> Boletas
             </a>
         </li>
         <li>
-            <a href="#">Forms</a>
+            <a href="?c=maestro&a=Index">Profesores</a>
         </li>
         <li class="active">
-            Form Elements
+                  Reportes      
         </li>
     </ol>
 </section>

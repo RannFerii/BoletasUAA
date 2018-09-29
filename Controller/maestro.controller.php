@@ -16,38 +16,37 @@ class MaestroController{
     public function Index(){
         require_once 'Views/header/dataTableReport.php';
         require_once 'Views/maestro/index.php';
-        require_once 'Views/footer/dataTableReport.php';
+        require_once 'Views/footer/BeginFooter.php';
+        require_once 'Views/footer/ScriptDataTableReport.php';
+        require_once 'Views/footer/ScriptButton.php';
+        require_once 'Views/footer/ScriptSweetAlert.php';
+        require_once 'Views/footer/EndFooter.php';
     }
 
     public function Reporte(){
         require_once 'Views/header/dataTableReport.php';
         require_once 'Views/maestro/reportes.php';
-        require_once 'Views/footer/dataTableReport.php';
+        require_once 'Views/footer/BeginFooter.php';
+        require_once 'Views/footer/ScriptDataTableReport.php';
+        require_once 'Views/footer/EndFooter.php';
     }
 
-    public function Crud(){
-        $maestro = new maestro();
-        if(isset($_REQUEST['maestroId'])) {
-            $maestro = $this->model->Obtener($_REQUEST['maestroId']);
-        }
-
-       require_once 'Views/header/dataTableReport.php';
-        require_once 'Views/maestro/Editar.php';
-        require_once 'Views/footer/dataTableReport.php';
-    }
-
+    //Cargar formulario
     public function Agregar(){
         $maestro = new maestro();
-
         require_once 'Views/header/dataTableReport.php';
         require_once 'Views/maestro/agregar.php';
-        require_once 'Views/footer/form.php';
+        require_once 'Views/footer/BeginFooter.php';
+        require_once 'Views/footer/ScriptValidation.php';
+        require_once 'Views/footer/ScriptNotification.php';
+        require_once 'Views/footer/ScriptMessageError.php';
+        require_once 'Views/footer/EndFooter.php';
     }
 
+    //Guardar form 
     public function Guardar(){
+        session_start();
         $maestro = new maestro();
-       
-
         $maestro->nombre = $_REQUEST['nombre'];
         $maestro->apellidoPaterno = $_REQUEST['apellidoPaterno'];
         $maestro->apellidoMaterno = $_REQUEST['apellidoMaterno'];
@@ -57,6 +56,7 @@ class MaestroController{
         $actionResult= "";
         if($this->BLL->checkEmail($maestro->email)==true)
         {
+            $_SESSION['mensajeError'] = "correo electrónico existente,prueba con otro";
             $actionResult='Location: index.php?c=maestro&a=Agregar';
             
         }else
@@ -65,23 +65,26 @@ class MaestroController{
              $actionResult='Location: index.php?c=maestro';
         }
 
-
-        
-        // try
-        // {
-        //     $this->model->Registrar($maestro);
-        // }
-        // catch(Exception $e)
-        // {
-        //      return   $e->getMessage();
-        // }
-
-        
         header($actionResult);
        
     }
 
+    //Cargar Form
     public function Editar(){
+        $maestro = new maestro();
+        if(isset($_REQUEST['maestroId'])) {
+            $maestro = $this->model->Obtener($_REQUEST['maestroId']);
+        }
+        require_once 'Views/header/dataTableReport.php';
+        require_once 'Views/maestro/Editar.php';
+        require_once 'Views/footer/BeginFooter.php';
+        require_once 'Views/footer/ScriptValidation.php';
+        require_once 'Views/footer/ScriptNotification.php';
+        require_once 'Views/footer/EndFooter.php';
+    }
+
+    //Guardar nuevos cambios
+    public function Actualizar(){
         $maestro = new maestro();
 
         $maestro->maestroId = $_REQUEST['maestroId'];

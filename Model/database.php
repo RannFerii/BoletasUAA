@@ -1,7 +1,7 @@
 <?php
 class Database
 {
-    //Esta función permite la conexión al SGBD: MariaDB.
+    //Esta función permite la conexión al SGBD: MySQL.
     //host = tipo de conexión local - 'localhost'.
     //dbname = nombre de la base de datos.
     //charset = utf8, indica la codificación de caracteres utilizada.

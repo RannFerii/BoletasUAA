@@ -1,19 +1,18 @@
-
 <section class="content-header">
-    <h1> Forms
-      
+    <h1>
+        Administrar
     </h1>
     <ol class="breadcrumb">
         <li>
-            <a href="index.html">
-                <i class="fa fa-fw ti-home"></i> Dashboard
+            <a href="Index.php">
+                <i class="fa fa-fw ti-home"></i> Boletas
             </a>
         </li>
         <li>
-            <a href="#">Forms</a>
+            <a href="?c=maestro&a=Index">Fechas</a>
         </li>
         <li class="active">
-            Form Elements
+                  Index      
         </li>
     </ol>
 </section>
@@ -56,7 +55,7 @@
                                     <td><?php echo $this->model->CicloEscolarNombre($r->cicloEscolarId); ?></td>
                                     <td> 
                                       <div class="ui-group-buttons">
-                                        <a href="?c=fecha&a=Crud&fechaId=<?php echo $r->fechaId; ?>"" class="btn btn-warning" role="button">
+                                        <a href="?c=fecha&a=Editar&fechaId=<?php echo $r->fechaId; ?>"" class="btn btn-warning" role="button">
                                             <i class="fa fa-fw fa-edit"></i>
                                         </a>
                                         <div class="or"></div>
@@ -65,7 +64,6 @@
                                         </a>
                                     </div>
                                     </td>
-                                    
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>

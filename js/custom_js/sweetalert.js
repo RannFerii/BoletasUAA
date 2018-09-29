@@ -21,8 +21,10 @@ $(document).ready(function () {
     });
 
     $('.ok_message').on('click', function (e) {
+         //Obtener la url por medio del id del boton que fue presionado
+        var url = $(e.currentTarget).attr("id"); 
         swal({
-            title: 'Are you sure?',
+            title: 'Estas seguro?',
             text: "You will not be able to recover this imaginary file!",
             type: 'warning',
             showCancelButton: true,
@@ -34,10 +36,13 @@ $(document).ready(function () {
             cancelButtonClass: 'btn btn-danger'
         }).then(function () {
             swal(
-                'Deleted!',
+                'Elemento eliminado',
                 'Your file has been deleted.',
                 'success'
             );
+            //Si se presiona "si", entonces ejecutar la url donde
+            //se lleva la direcion para borrar el elemento actual "var url"
+             window.location = url;
         }, function (dismiss) {
             // dismiss can be 'cancel', 'overlay',
             // 'close', and 'timer'
