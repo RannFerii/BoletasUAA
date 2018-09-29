@@ -17,31 +17,26 @@ class FechaController{
     public function Index(){
         require_once 'Views/header/dataTableReport.php';
         require_once 'Views/fecha/index.php';
-        require_once 'Views/footer/dataTableReport.php';
+        require_once 'Views/footer/BeginFooter.php';
+        require_once 'Views/footer/ScriptDataTableReport.php';
+        require_once 'Views/footer/ScriptButton.php';
+         require_once 'Views/footer/ScriptSweetAlert.php';
+        require_once 'Views/footer/EndFooter.php';
     }
 
-    //Llamado a la vista proveedor-editar
-    public function Crud(){
-        $fecha = new fecha();
-
-        //Se obtienen los datos del proveedor a editar.
-        if(isset($_REQUEST['fechaId'])){
-            $fecha = $this->model->Obtener($_REQUEST['fechaId']);
-        }
-
-        //Llamado de las vistas.
-         require_once 'Views/header/dataTableReport.php';
-        require_once 'Views/fecha/editar.php';
-        require_once 'Views/footer/form.php';
-  }
-
+  
     //Llamado a la vista proveedor-nuevo
     public function Agregar(){
         $pvd = new fecha();
 
         require_once 'Views/header/dataTableReport.php';
         require_once 'Views/fecha/agregar.php';
-        require_once 'Views/footer/form.php';
+        require_once 'Views/footer/BeginFooter.php';
+        require_once 'Views/footer/ScriptValidation.php';
+        require_once 'Views/footer/ScriptNotification.php';
+         require_once 'Views/footer/ScriptDatePicker.php';
+         require_once 'Views/footer/ScriptDropDownSelect.php';
+        require_once 'Views/footer/EndFooter.php';
     }
 
     //Método que registrar al modelo un nuevo proveedor.
@@ -60,14 +55,35 @@ class FechaController{
         
     }
 
-    //Método que modifica el modelo de un proveedor.
+      //Llamado a la vista proveedor-editar
     public function Editar(){
-        $pvd = new proveedor();
+        $fecha = new fecha();
 
-        $pvd->nit = $_REQUEST['nit'];
-        $pvd->razonS = $_REQUEST['razonS'];
-        $pvd->dir = $_REQUEST['dir'];
-        $pvd->tel = $_REQUEST['tel'];
+        //Se obtienen los datos del proveedor a editar.
+        if(isset($_REQUEST['fechaId'])){
+            $fecha = $this->model->Obtener($_REQUEST['fechaId']);
+        }
+
+        //Llamado de las vistas.
+         require_once 'Views/header/dataTableReport.php';
+        require_once 'Views/fecha/editar.php';
+        require_once 'Views/footer/BeginFooter.php';
+        require_once 'Views/footer/ScriptValidation.php';
+        require_once 'Views/footer/ScriptNotification.php';
+         require_once 'Views/footer/ScriptDatePicker.php';
+         require_once 'Views/footer/ScriptDropDownSelect.php';
+        require_once 'Views/footer/EndFooter.php';
+  }
+
+
+    //Método que modifica el modelo de un proveedor.
+    public function Actualizar(){
+        $fecha = new fecha();
+
+        $fecha->nit = $_REQUEST['nit'];
+        $fecha->razonS = $_REQUEST['razonS'];
+        $fecha->dir = $_REQUEST['dir'];
+        $fecha->tel = $_REQUEST['tel'];
 
         $this->model->Actualizar($pvd);
 

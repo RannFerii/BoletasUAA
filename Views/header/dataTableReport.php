@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>UAA | Boletas </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link rel="shortcut icon" href="img/computo.png"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -66,6 +66,23 @@
     <Link href="vendors/iCheck/css/line/line.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <link rel="stylesheet" href="css/custom_css/skins/skin-default.css" type="text/css" id="skin"/>
+
+    <!--Notificaciones -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom_css/skins/skin-default.css" type="text/css" id="skin"/>
+    <link rel="stylesheet" href="vendors/animate/animate.min.css"/>
+    <link rel="stylesheet" href="vendors/pnotify/css/pnotify.css">
+    <link href="vendors/pnotify/css/pnotify.brighttheme.css" rel="stylesheet" type="text/css"/>
+    <link href="vendors/pnotify/css/pnotify.buttons.css" rel="stylesheet" type="text/css"/>
+    <link href="vendors/pnotify/css/pnotify.mobile.css" rel="stylesheet" type="text/css"/>
+    <link href="vendors/pnotify/css/pnotify.history.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom_css/toastr_notificatons.css">
+
+    <!--SweetAlert -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom_css/skins/skin-default.css" type="text/css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="vendors/sweetalert2/css/sweetalert2.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom_css/sweet_alert2.css">
      
     <!--Estilos modificados, siempre al final de todos para sobreescribirse-->
     <link href="css/main.css" rel="stylesheet"/>
@@ -108,6 +125,7 @@
                         <div class="riot">
                             <div>
                                 <?php 
+                                
                                   if(isset($_SESSION["usuario"]))
                                   {
                                     echo $_SESSION["usuario"];
@@ -234,16 +252,16 @@
                                 </a>
                                 <ul class="sub-menu p-l-40">
                                    <li>
-                                        <a href="?c=maestro&a=Index"> <i class="fa fa-fw ti-write"></i> Ver todos
+                                        <a href="?c=alumno&a=Index"> <i class="fa fa-fw ti-write"></i> Ver todos
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="?c=maestro&a=Reporte"> <i class="fa fa-fw ti-write"></i> 
+                                        <a href="?c=alumno&a=Reporte"> <i class="fa fa-fw ti-write"></i> 
                                             Reporte
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="?c=maestro&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
+                                        <a href="?c=alumno&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
                                         </a>
                                     </li>
                                 </ul>

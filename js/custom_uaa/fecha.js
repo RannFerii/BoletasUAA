@@ -34,3 +34,12 @@
         }
     });
 
+     $('.fechaFinalB').dateRangePicker({
+        singleDate: true,
+        showShortcuts: false,
+        singleMonth: true,
+        getValue: function () {
+            $(this).val("");
+        }
+    });
+

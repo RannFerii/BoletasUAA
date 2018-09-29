@@ -3,10 +3,11 @@ $(document).ready(function () {
     PNotify.prototype.options.styling = "bootstrap3";
     PNotify.prototype.options.styling = "jqueryui";
     PNotify.prototype.options.styling = "fontawesome";
-    new PNotify({
-        title: 'Regular Notice',
-        text: 'Check me out! I\'m a notice.'
-    });
+    //Se comenta esta linea ya que es una notificacion por default
+    // new PNotify({
+    //     title: 'Regular Notice',
+    //     text: 'Check me out! I\'m a notice.'
+    // });
 
 
     function fake_load() {

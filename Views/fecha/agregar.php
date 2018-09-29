@@ -1,18 +1,18 @@
 <section class="content-header">
     <h1>
-        Form Elements
+        Administrar
     </h1>
     <ol class="breadcrumb">
         <li>
-            <a href="index.html">
-                <i class="fa fa-fw ti-home"></i> Dashboard
+            <a href="Index.php">
+                <i class="fa fa-fw ti-home"></i> Boletas
             </a>
         </li>
         <li>
-            <a href="#">Forms</a>
+            <a href="?c=maestro&a=Index">Fechas</a>
         </li>
         <li class="active">
-            Form Elements
+                  Agregar      
         </li>
     </ol>
 </section>
@@ -31,107 +31,6 @@
                 </div>
                 <div class="panel-body">
                      <form class="box-body "  action="?c=fecha&a=Guardar"  method="post" enctype="multipart/form-data" >
-                        <!--Se ocultan puesto que si se eliminan marca error en el script,
-                            Corroborar con el inspector de codigo -->
-                        <div class="form-group" style="display:none"> 
-                            <label>
-                                Batch mode ( week ):
-                            </label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-fw ti-calendar"></i>
-                                </div>
-                                <input class="form-control" id="date-range14" size="60" value=""
-                                       placeholder="YYYY-MM-DD to YYYY-MM-DD">
-                            </div>
-                            <!-- /.input group -->
-                        </div>
-                        <div class="form-group" style="display:none">
-                            <label>
-                                Date picker:
-                            </label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-fw ti-calendar"></i>
-                                </div>
-                                <input type="text" class="form-control pull-right" id="date-range0"
-                                       placeholder="YYYY-MM-DD to YYYY-MM-DD"/>
-                            </div>
-                            <!-- /.input group -->
-                        </div>
-                        <div class="form-group" style="display:none">                  
-                            <label>
-                                Date and Time Picker:
-                            </label>
-                            <div class="input-group ">
-                                <input type="text" class="form-control" id="dateclock"
-                                       placeholder="YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM">
-                                <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-time"></span>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="form-group" style="display:none"> 
-                            <label>
-                                Span instead of Input:
-                            </label>
-                            <div class="input-group">
-                                <span id="date-range9"
-                                      style="background-color:#6699cc; color:white;padding:3px; cursor:pointer; border-radius:4px;">YYYY-MM-DD to YYYY-MM-DD</span>
-                            </div>
-                        </div>
-                        <div class="form-group" style="display:none"> 
-                            <label>
-                                Date picker with Animation:
-                            </label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-fw ti-time"></i>
-                                </div>
-                                <input id="date-range50" size="30" value="" class="form-control"
-                                       placeholder="YYYY-MM-DD to YYYY-MM-DD">
-                            </div>
-                            <!-- /.input group -->
-                        </div>
-                        <div class="form-group" style="display:none"> 
-                            <label>
-                                Hotel booking:
-                            </label>
-                            <div class="input-group">
-
-                                <input id="hotel-booking" class="form-control" size="60" value=""
-                                       placeholder="Days Booked">
-                                <span>
-                                </span>
-                                <div class="input-group-addon">
-                                    <i class="fa fa-fw ti-calendar"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group" style="display:none">
-                            <label>
-                                Select backward:
-                            </label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-fw ti-calendar"></i>
-                                </div>
-                                <input class="form-control" id="date-range26" size="30" value=""
-                                       placeholder="YYYY-MM-DD to YYYY-MM-DD">
-                            </div>
-                            <!-- /.input group -->
-                        </div>
-                        <div class="form-group" style="display:none">
-                                        <label for='datetimepicker1'>
-                                            Date Picker:
-                                        </label>
-                                        <div class="input-group ">
-                                            <input type="text" class="form-control" id="datetimepicker1">
-                                            <span class="input-group-addon">
-                                                <i class="fa fa-fw ti-calendar"></i>
-                                            </span>
-                                        </div>
-                        </div>
                        <div class="form-group" >
                             <label>
                                Primer departamental
@@ -189,23 +88,23 @@
                                     <i class="fa fa-fw ti-calendar"></i>
                                 </div>
                                 <!-- Para que no marqeu error se debe utilizar el ID origina del script dateRangePicker-->
-                                <input class="form-control " id="date-range13-2" name="finalB"  size="40"placeholder="YYYY-MM-DD" >
+                                <input class="form-control fechaFinalB "  name="finalB"  size="40"placeholder="YYYY-MM-DD" >
                             </div>
                             <!-- /.input group -->
                         </div>
                         <div class="form-group">
-                                        <label for="select21" class="control-label">
-                                           Ciclo escolar
-                                        </label>
-                                        <select id="select21" class="form-control select2" style="width:100%" name="cicloEscolarId">
-                                            <option value="">Seleccionar un ciclo escolar</option>
-                                            <?php foreach($this->model->ListarCicloEscolar() as $r): ?>
-                                              <option value='<?php echo $r->cicloEscolarId; ?>'>
-                                                 <?php echo $r->nombre; ?>
-                                               </option>
-                                             <?php endforeach; ?>
-                                        </select>
-                                    </div>
+                            <label for="select21" class="control-label">
+                               Ciclo escolar
+                            </label>
+                            <select id="select21" class="form-control select2" style="width:100%" name="cicloEscolarId">
+                                <option value="">Seleccionar un ciclo escolar</option>
+                                <?php foreach($this->model->ListarCicloEscolar() as $r): ?>
+                                  <option value='<?php echo $r->cicloEscolarId; ?>'>
+                                     <?php echo $r->nombre; ?>
+                                   </option>
+                                 <?php endforeach; ?>
+                            </select>
+                        </div>
                         <div class="form-group form-actions">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-effect-ripple btn-primary">Agregar</button>
@@ -214,9 +113,6 @@
                             </div>
                         </div>
                     </form>
-                    <form id="form-validation"  action="?c=maestro&a=Guardar" method="post" enctype="multipart/form-data"
-                                  class="form-horizontal">
-                              </form>
                 </div>
             </div>
         </div>

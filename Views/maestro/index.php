@@ -1,19 +1,18 @@
-
 <section class="content-header">
-    <h1> Forms
-      
+    <h1>
+        Administrar
     </h1>
     <ol class="breadcrumb">
         <li>
-            <a href="index.html">
-                <i class="fa fa-fw ti-home"></i> Dashboard
+            <a href="Index.php">
+                <i class="fa fa-fw ti-home"></i> Boletas
             </a>
         </li>
         <li>
-            <a href="#">Forms</a>
+            <a href="?c=maestro&a=Index">Profesores</a>
         </li>
         <li class="active">
-            Form Elements
+                  Index      
         </li>
     </ol>
 </section>
@@ -52,17 +51,16 @@
                                     <td><?php echo $r->email; ?></td>
                                      <td><?php echo $r->telefono; ?></td>
                                      <td> 
-                                      <div class="ui-group-buttons">
-                                        <a href="?c=maestro&a=Crud&maestroId=<?php echo $r->maestroId; ?>"" class="btn btn-warning" role="button">
-                                            <i class="fa fa-fw fa-edit"></i>
-                                        </a>
-                                        <div class="or"></div>
-                                        <a href="?c=maestro&a=Eliminar&maestroId=<?php echo $r->maestroId; ?>" class="btn btn-default" role="button">
-                                            <span class="glyphicon glyphicon-remove"></span> 
-                                        </a>
-                                    </div>
-                                </td>
-                                    
+                                        <div class="ui-group-buttons">
+                                            <a href="?c=maestro&a=Editar&maestroId=<?php echo $r->maestroId; ?>" class="btn btn-warning" role="button" >
+                                                <i class="fa fa-fw fa-edit"></i>
+                                            </a>
+                                            <div class="or"></div>
+                                            <a href="#" id="?c=maestro&a=Eliminar&maestroId=<?php echo $r->maestroId; ?>" class="btn btn-default ok_message" role="button">
+                                                <span class="glyphicon glyphicon-remove"></span> 
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -73,6 +71,3 @@
         </div>
     </div>
 </section>
-
-
-
