@@ -318,6 +318,30 @@
                                 </ul>
                             </li>
                         </ul>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-fw ti-receipt"></i> Plan de Estudios
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="sub-menu p-l-40">
+                                   <li>
+                                        <a href="?c=plan_estudio&a=Index"> <i class="fa fa-fw ti-write"></i> Ver todos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=plan_estudio&a=Reporte"> <i class="fa fa-fw ti-write"></i> 
+                                            Reporte
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=plan_estudio&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
 
 
                     </li>
