@@ -290,6 +290,78 @@
                                 </ul>
                             </li>
                         </ul>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-fw ti-receipt"></i> Grupos
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="sub-menu p-l-40">
+                                   <li>
+                                        <a href="?c=grupo&a=Index"> <i class="fa fa-fw ti-write"></i> Ver todos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=grupo&a=Reporte"> <i class="fa fa-fw ti-write"></i> 
+                                            Reporte
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=grupo&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-fw ti-receipt"></i> Ciclo Escolar
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="sub-menu p-l-40">
+                                   <li>
+                                        <a href="?c=ciclo_escolar&a=Index"> <i class="fa fa-fw ti-write"></i> Ver todos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=ciclo_escolar&a=Reporte"> <i class="fa fa-fw ti-write"></i> 
+                                            Reporte
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=ciclo_escolar&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-fw ti-receipt"></i> Plan de Estudios
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="sub-menu p-l-40">
+                                   <li>
+                                        <a href="?c=plan_estudio&a=Index"> <i class="fa fa-fw ti-write"></i> Ver todos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=plan_estudio&a=Reporte"> <i class="fa fa-fw ti-write"></i> 
+                                            Reporte
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="?c=plan_estudio&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+
                     </li>
                 </ul>
                 <!-- / .navigation --> </div>

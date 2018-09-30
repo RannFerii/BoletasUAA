@@ -6,7 +6,7 @@
 <body>
 <?php
 try{
-	$base=new PDO("mysql:host=localhost; dbname=calificaciones","root","123456");
+	$base=new PDO("mysql:host=localhost; dbname=calificaciones","root","Genesis10.");
 	$base-> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 	$sql="SELECT * from administrador where usuario=:usuario and pass= :pass";
 	$resultado=$base-> prepare ($sql);
