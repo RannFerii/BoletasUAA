@@ -9,10 +9,10 @@
             </a>
         </li>
         <li>
-            <a href="?c=maestro&a=Index">Profesores</a>
+            <a href="?c=maestro&a=Index">Alumnos</a>
         </li>
         <li class="active">
-                  Editar      
+                  Editar Alumno      
         </li>
     </ol>
 </section>
@@ -22,7 +22,7 @@
                     <div class="panel ">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <i class="fa fa-fw ti-star"></i> Agregar profesor
+                                <i class="fa fa-fw ti-star"></i> Editar alumno
                             </h3>
                             <span class="pull-right">
                                     <i class="fa fa-fw ti-angle-up clickable"></i>
@@ -30,10 +30,30 @@
                                 </span>
                         </div>
                         <div class="panel-body">
-                            <form id="form-validation"  action="?c=maestro&a=Actualizar" method="post" 
-                            enctype="multipart/form-data" class="form-horizontal">
-
-                                 <input type="hidden" name="maestroId" value="<?php echo $maestro->maestroId; ?>" />
+                            <form id="form-validation"  action="?c=alumno&a=Actualizar" method="post" enctype="multipart/form-data"
+                                  class="form-horizontal">
+                                  <div class="form-group">
+                                    <label class="col-md-4 control-label" for="nombre">
+                                        Matrícula UAA
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="nombre"  name="matriculaUAA" 
+                                        class="form-control" value="<?php echo $alumno->matriculaUAA; ?>"
+                                               placeholder="Introduce un nombre" readonly required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="nombre">
+                                        Matrícula UNAM
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="nombre"  name="matriculaUNAM" 
+                                        class="form-control" value="<?php echo $alumno->matriculaUNAM; ?>"
+                                               placeholder="Introduce un nombre" required="required">
+                                    </div>
+                                </div>
 
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="nombre">
@@ -42,7 +62,7 @@
                                     </label>
                                     <div class="col-md-6">
                                         <input type="text" id="nombre"  name="nombre" 
-                                        class="form-control" value="<?php echo $maestro->nombre; ?>"
+                                        class="form-control" value="<?php echo $alumno->nombre; ?>"
                                                placeholder="Introduce un nombre" required="required">
                                     </div>
                                 </div>
@@ -53,7 +73,7 @@
                                     </label>
                                     <div class="col-md-6">
                                         <input type="text" id="val-apellidoPaterno"  name="apellidoPaterno" 
-                                        value="<?php echo $maestro->apellidoPaterno; ?>" class="form-control"
+                                        value="<?php echo $alumno->apellidoPaterno; ?>" class="form-control"
                                                placeholder="Introduce un apellido paterno" required="required">
                                     </div>
                                 </div>
@@ -64,7 +84,7 @@
                                     </label>
                                     <div class="col-md-6">
                                         <input type="text" id="val-apellidoMaterno"  name="apellidoMaterno" 
-                                        value="<?php echo $maestro->apellidoMaterno; ?>" class="form-control"
+                                        value="<?php echo $alumno->apellidoMaterno; ?>" class="form-control"
                                                placeholder="Introduce un apellido materno" required="required">
                                     </div>
                                 </div>
@@ -75,7 +95,7 @@
                                     </label>
                                     <div class="col-md-6">
                                         <input type="text" id="email" name="email" class="form-control"
-                                        value="<?php echo $maestro->email; ?>"
+                                        value="<?php echo $alumno->email; ?>"
                                                placeholder="Introduce un E-mail" required="required">
                                     </div>
                                 </div>
@@ -86,7 +106,7 @@
                                     </label>
                                     <div class="col-md-6">
                                         <input type="text" id="number" name="telefono" class="form-control"
-                                        value="<?php echo $maestro->telefono; ?>"
+                                        value="<?php echo $alumno->telefono; ?>"
                                                placeholder="Introduce un número telefónico">
                                     </div>
                                 </div>

@@ -31,9 +31,9 @@ class MaestroController{
         require_once 'Views/footer/EndFooter.php';
     }
 
-    //Cargar formulario
-    public function Agregar(){
-        $maestro = new maestro();
+    //formulario  reutilizable
+    public function FormAgregar($maestro){
+        $maestro=$maestro;
         require_once 'Views/header/dataTableReport.php';
         require_once 'Views/maestro/agregar.php';
         require_once 'Views/footer/BeginFooter.php';
@@ -42,10 +42,27 @@ class MaestroController{
         require_once 'Views/footer/ScriptMessageError.php';
         require_once 'Views/footer/EndFooter.php';
     }
+    
+    //formulario  reutilizable
+    public function FormEditar($maestro){
+       $maestro=$maestro;
+        require_once 'Views/header/dataTableReport.php';
+        require_once 'Views/maestro/editar.php';
+        require_once 'Views/footer/BeginFooter.php';
+        require_once 'Views/footer/ScriptValidation.php';
+        require_once 'Views/footer/ScriptNotification.php';
+        require_once 'Views/footer/ScriptMessageError.php';
+        require_once 'Views/footer/EndFooter.php';
+    }
+
+    //Cargar formulario
+    public function Agregar(){
+        $maestro = new maestro();
+        $this->FormAgregar($maestro);
+    }
 
     //Guardar form 
     public function Guardar(){
-        session_start();
         $maestro = new maestro();
         $maestro->nombre = $_REQUEST['nombre'];
         $maestro->apellidoPaterno = $_REQUEST['apellidoPaterno'];
@@ -54,18 +71,23 @@ class MaestroController{
         $maestro->telefono = $_REQUEST['telefono'];
 
         $actionResult= "";
+
+        //Validaciones
         if($this->BLL->checkEmail($maestro->email)==true)
-        {
-            $_SESSION['mensajeError'] = "correo electrónico existente,prueba con otro";
-            $actionResult='Location: index.php?c=maestro&a=Agregar';
-            
-        }else
+        {  
+             $_SESSION['mensajeError'] = "Correo electrónico existente,prueba con otro";
+             $actionResult='Location: index.php?c=maestro&a=Agregar';
+        } 
+
+        if($actionResult=="")
         {
             $this->model->Registrar($maestro);
-             $actionResult='Location: index.php?c=maestro';
-        }
+             header('Location: index.php?c=maestro');
 
-        header($actionResult);
+        }else
+        {
+            $this->FormAgregar($maestro);
+        }
        
     }
 
@@ -75,12 +97,7 @@ class MaestroController{
         if(isset($_REQUEST['maestroId'])) {
             $maestro = $this->model->Obtener($_REQUEST['maestroId']);
         }
-        require_once 'Views/header/dataTableReport.php';
-        require_once 'Views/maestro/Editar.php';
-        require_once 'Views/footer/BeginFooter.php';
-        require_once 'Views/footer/ScriptValidation.php';
-        require_once 'Views/footer/ScriptNotification.php';
-        require_once 'Views/footer/EndFooter.php';
+        $this->FormEditar($maestro);
     }
 
     //Guardar nuevos cambios
@@ -94,9 +111,24 @@ class MaestroController{
         $maestro->email = $_REQUEST['email'];
         $maestro->telefono = $_REQUEST['telefono'];
 
-        $this->model->Actualizar($maestro);
+        $actionResult= "";
 
-        header('Location: index.php?c=maestro');
+         //Validaciones
+        if($this->BLL->checkEditEmail($maestro->email,$maestro->maestroId)==true)
+        {  
+             $_SESSION['mensajeError'] = "Correo electrónico existente,prueba con otro";
+             $actionResult='Location: index.php?c=maestro&a=Agregar';
+        } 
+
+        if($actionResult=="")
+        {
+            $this->model->Actualizar($maestro);
+             header('Location: index.php?c=maestro');
+
+        }else
+        {
+            $this->FormEditar($maestro);
+        }
     }
 
     public function Eliminar(){

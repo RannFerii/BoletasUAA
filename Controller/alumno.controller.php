@@ -1,5 +1,5 @@
 <?php
-require_once 'model/alumno.php';
+require_once 'Model/alumno.php';
 require_once 'BLL/alumnosBLL.php';
 
 class AlumnoController{
@@ -35,7 +35,7 @@ class AlumnoController{
     }
 
     //formulario  reutilizable
-    public function AlumnoForm($alumno){
+    public function FormAgregar($alumno){
         $alumno=$alumno;
         require_once 'Views/header/dataTableReport.php';
         require_once 'Views/alumno/agregar.php';
@@ -46,9 +46,21 @@ class AlumnoController{
         require_once 'Views/footer/EndFooter.php';
     }
 
+    //formulario  reutilizable
+    public function FormEditar($alumno){
+        $alumno=$alumno;
+        require_once 'Views/header/dataTableReport.php';
+        require_once 'Views/alumno/editar.php';
+        require_once 'Views/footer/BeginFooter.php';
+        require_once 'Views/footer/ScriptValidation.php';
+        require_once 'Views/footer/ScriptNotification.php';
+        require_once 'Views/footer/ScriptMessageError.php';
+        require_once 'Views/footer/EndFooter.php';
+    }
+
     public function Agregar(){
         $alumno= new alumno();
-        $this->AlumnoForm($alumno);
+        $this->FormAgregar($alumno);
     }
 
     //Guardar form 
@@ -69,32 +81,39 @@ class AlumnoController{
         if($this->BLL->checkMatriculaUAA($alumno->matriculaUAA)==true)
         {
             $_SESSION['mensajeError'] = "Matrícula UAA repetida, prueba otra";
-            if($this->BLL->checkMatriculaUNAM($alumno->matriculaUNAM)==true)
-            {
-                $_SESSION['mensajeError'] = "Matrícula UNAM repetida, prueba otra";
-                if($this->BLL->checkEmail($alumno->email)==true)
-                {
-                    $_SESSION['mensajeError'] = "Correo electrónico existente,prueba con otro";
-                }
-            }
-
             $actionResult='Location: index.php?c=alumno&a=Agregar';
-             $this->AlumnoForm($alumno);
-            
-        }else
+        }
+
+        if($this->BLL->checkMatriculaUNAM($alumno->matriculaUNAM)==true)
+        {
+            $_SESSION['mensajeError'] = "Matrícula UNAM repetida, prueba otra";
+            $actionResult='Location: index.php?c=alumno&a=Agregar';
+        } 
+
+        if($this->BLL->checkEmail($alumno->email)==true)
+        {  
+             $_SESSION['mensajeError'] = "Correo electrónico existente,prueba con otro";
+             $actionResult='Location: index.php?c=alumno&a=Agregar';
+        } 
+
+        if($actionResult=="")
         {
             $this->model->Registrar($alumno);
              header('Location: index.php?c=alumno');
-        }    
-    }
 
+        }else
+        {
+            $this->FormAgregar($alumno);
+        }
+             
+    }
 
     public function Editar(){
         $alumno = new alumno();
         if(isset($_REQUEST['matriculaUAA'])) {
             $alumno = $this->model->Obtener($_REQUEST['matriculaUAA']);
         }
-        $this->AlumnoForm($alumno);
+        $this->FormEditar($alumno);
     }
 
     //Guardar nuevos cambios
@@ -107,29 +126,38 @@ class AlumnoController{
         $alumno->apellidoMaterno = $_REQUEST['apellidoMaterno'];
         $alumno->email = $_REQUEST['email'];
         $alumno->telefono = $_REQUEST['telefono'];
+        $alumno->matriculaUAA = $_REQUEST['matriculaUAA'];
 
         $actionResult= "";
-        //Validaciones
-        if($this->BLL->checkMatriculaUAA($alumno->matriculaUAA)==true)
-        {
-            $_SESSION['mensajeError'] = "Matrícula UAA repetida, prueba otra";
-            if($this->BLL->checkMatriculaUNAM($alumno->matriculaUNAM)==true)
-            {
-                $_SESSION['mensajeError'] = "Matrícula UNAM repetida, prueba otra";
-                if($this->BLL->checkEmail($alumno->email)==true)
-                {
-                    $_SESSION['mensajeError'] = "Correo electrónico existente,prueba con otro";
-                }
-            }
 
+        //Validaciones
+        // if($this->BLL->checkEditMatriculaUAA($alumno->matriculaUAA)==true)
+        // {
+        //     $_SESSION['mensajeError'] = "Matrícula UAA repetida, prueba otra";
+        //     $actionResult='Location: index.php?c=alumno&a=Agregar';
+        // }
+
+        if($this->BLL->checkEditMatriculaUNAM($alumno->matriculaUNAM,$alumno->matriculaUAA)==true)
+        {
+            $_SESSION['mensajeError'] = "Matrícula UNAM repetida, prueba otra";
             $actionResult='Location: index.php?c=alumno&a=Agregar';
-             $this->AlumnoForm($alumno);
-            
-        }else
+        } 
+
+        if($this->BLL->checkEditEmail($alumno->email,$alumno->matriculaUAA)==true)
+        {  
+             $_SESSION['mensajeError'] = "Correo electrónico existente,prueba con otro";
+             $actionResult='Location: index.php?c=alumno&a=Agregar';
+        } 
+
+        if($actionResult=="")
         {
             $this->model->Actualizar($alumno);
-             header('Location: index.php?c=alumno');
-        }   
+            header('Location: index.php?c=alumno');
+
+        }else
+        {            
+            $this->FormEditar($alumno);
+        }  
     }
 
     public function Eliminar(){
