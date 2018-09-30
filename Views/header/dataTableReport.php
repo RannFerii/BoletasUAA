@@ -252,16 +252,16 @@
                                 </a>
                                 <ul class="sub-menu p-l-40">
                                    <li>
-                                        <a href="?c=alumno&a=Index"> <i class="fa fa-fw ti-write"></i> Ver todos
+                                        <a href="?c=alumno&a=Index"><i class="fa fa-fw fa-eye"></i> Ver todos
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="?c=alumno&a=Reporte"> <i class="fa fa-fw ti-write"></i> 
+                                   <!--  <li>
+                                        <a href="?c=alumno&a=Reporte"> <i class="fa fa-fw fa-download"></i> 
                                             Reporte
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li>
-                                        <a href="?c=alumno&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
+                                        <a href="?c=alumno&a=Agregar">  <i class="fa fa-fw fa-plus"></i> Agregar
                                         </a>
                                     </li>
                                 </ul>
@@ -275,16 +275,16 @@
                                 </a>
                                 <ul class="sub-menu p-l-40">
                                    <li>
-                                        <a href="?c=fecha&a=Index"> <i class="fa fa-fw ti-write"></i> Ver todas
+                                        <a href="?c=fecha&a=Index"> <i class="fa fa-fw fa-eye"></i> Ver todas
                                         </a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="?c=fecha&a=Reporte"> <i class="fa fa-fw ti-write"></i> 
                                             Reporte
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li>
-                                        <a href="?c=fecha&a=Agregar"> <i class="fa fa-fw ti-write"></i> Agregar
+                                        <a href="?c=fecha&a=Agregar"> <i class="fa fa-fw fa-plus"></i> Agregar
                                         </a>
                                     </li>
                                 </ul>

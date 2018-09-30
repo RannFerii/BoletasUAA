@@ -3,8 +3,8 @@ class alumno
 {
 	//Atributo para conexión a SGBD
 	private $pdo;
-
-		//Atributos del objeto proveedor
+	
+	//Atributos del objeto proveedor
 	public $matriculaUAA;
 	public $matriculaUNAM;
     public $nombre;
@@ -85,15 +85,13 @@ class alumno
 		}
 	}
 
-	//Método que actualiza una tupla a partir de la clausula
-	//Where y el nit del proveedor.
 	public function Actualizar($data)
 	{
 		try
 		{
 			//Sentencia SQL para actualizar los datos.
 			$sql = "UPDATE alumnos SET
-						matriculaUAA     = ?,
+						matriculaUAA       = ?,
 						matriculaUNAM      = ?,
 						nombre             = ?,
 						apellidoPaterno    = ?,
@@ -102,9 +100,7 @@ class alumno
             			telefono           = ?
 				    WHERE matriculaUAA = ?";
 			//Ejecución de la sentencia a partir de un arreglo.
-			$this->pdo->prepare($sql)
-			     ->execute(
-				    array(
+			$this->pdo->prepare($sql)->execute(array(
 				    	$data->matriculaUAA,
 				    	$data->matriculaUNAM,
                         $data->nombre,
@@ -115,12 +111,15 @@ class alumno
                         $data->matriculaUAA
 					)
 				);
+		    //Actualizar matriculaUAA por separado ya que es la PK de la tabla
+		    //    $sql = "UPDATE alumnos SET matriculaUAA = ? WHERE matriculaUNAM = ?";
+			// //Ejecución de la sentencia a partir de un arreglo.
+			// $this->pdo->prepare($sql)->execute(array($data->matriculaUAA,$data->matriculaUNAM));
 		} catch (Exception $e)
 		{
 			die($e->getMessage());
 		}
 	}
-
 	//Método que registra un nuevo proveedor a la tabla.
 	public function Registrar(alumno $data)
 	{
